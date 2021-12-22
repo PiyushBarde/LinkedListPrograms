@@ -3,14 +3,17 @@ package com.bridgelabs.linklist;
 public class LinkList {
     static Node head;
 
-    public  void addingValuesFromFirst(int key){
+    public  void appendingMethod(int key){
         Node newNode = new Node(key);
         if(head==null){
             head=newNode;
             return;
         }
-        newNode.next=head;
-        head=newNode;
+        Node currNode =head;
+        while(currNode.next!=null){
+            currNode=currNode.next;
+        }
+        currNode.next=newNode;
     }
     static void printLinkList(){
         if( head == null ){
@@ -27,9 +30,9 @@ public class LinkList {
 
     public static void main(String[] args) {
         LinkList linkList = new LinkList();
-        linkList.addingValuesFromFirst(70);
-        linkList.addingValuesFromFirst(30);
-        linkList.addingValuesFromFirst(56);
+        linkList.appendingMethod(56);
+        linkList.appendingMethod(30);
+        linkList.appendingMethod(70);
         printLinkList();
 
     }
