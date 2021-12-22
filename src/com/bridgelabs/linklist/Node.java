@@ -5,7 +5,8 @@ public  class  Node{
     int key;
     static Node head;
 
-    public Node(int key) {
+    public Node(int key)
+    {
         this.key = key;
         this.next = null;
 

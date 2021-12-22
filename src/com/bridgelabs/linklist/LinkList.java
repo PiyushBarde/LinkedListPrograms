@@ -3,7 +3,8 @@ package com.bridgelabs.linklist;
 public class LinkList {
     static Node head;
 
-    public  void appendingMethod(int key){
+    public  void appendingMethod(int key)
+    {
         Node newNode = new Node(key);
         if(head==null){
             head=newNode;
@@ -16,7 +17,8 @@ public class LinkList {
         currNode.next=newNode;
     }
     static void printLinkList(){
-        if( head == null ){
+        if( head == null )
+        {
             System.err.println("List is empty");
             return;
         }
