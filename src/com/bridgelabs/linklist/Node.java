@@ -2,7 +2,7 @@ package com.bridgelabs.linklist;
 
 public  class  Node{
     Node next;
-    int key;
+    Integer key;
     static Node head;
 
     public Node(int key)

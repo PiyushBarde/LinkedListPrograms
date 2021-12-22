@@ -4,26 +4,7 @@ public class LinkList {
     static Node head;
     static int length = 0;
 
-    static  void addFirst(int key){
-        Node newNode = new Node(key);
-        if(key==30){
-            addFirst(40);
-        }
-        if(key==40)
-        {
-            System.out.println("Node 40 removed");
-            return;
-        }
-        length++;
-        if(head==null){
-            head=newNode;
-            return;
-        }
-        newNode.next=head;
-        head=newNode;
 
-
-    }
     static void printLinkList(){
         if( head == null )
         {
@@ -40,6 +21,7 @@ public class LinkList {
 
     static void findElement(){
         int counter = 1;
+
         while(head.key!=30){
             counter++;
             head=head.next;
@@ -47,13 +29,32 @@ public class LinkList {
         System.out.println("Node "+ counter + " is equal to 30");
 
         }
+    void sortedInsert(Integer key){
+        Node newNode = new Node(key);
+        if (head == null || (head.key.compareTo(newNode.key) == 1 || head.key.compareTo(newNode.key) == 0))
+        {
+            newNode.next = head;
+            head = newNode;
+        }
+        else {
+             Node currNode = head;
+              while (currNode.next != null && (currNode.next.key.compareTo(currNode.key) == -1)) {
+
+
+                currNode = currNode.next;
+            }
+                newNode.next = currNode.next;
+                currNode.next = newNode;
+
+        }
+    }
 
 
     public static void main(String[] args) {
         LinkList linkList = new LinkList();
-        linkList.addFirst(70);
-        linkList.addFirst(30);
-        linkList.addFirst(56);
+        linkList.sortedInsert(70);
+        linkList.sortedInsert(30);
+        linkList.sortedInsert(56);
 
 
         printLinkList();
