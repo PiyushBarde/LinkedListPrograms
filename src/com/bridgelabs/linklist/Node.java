@@ -1,22 +1,13 @@
 package com.bridgelabs.linklist;
 
-public class Node< T > {
-     public T key;
-     public Node next;
+public  class  Node{
+    Node next;
+    int key;
+    static Node head;
 
-    public void setNext(Node next)
-    {
-        this.next = next;
-    }
-
-    public Node getNext()
-    {
-        return next;
-    }
-
-    public Node(T key) {
+    public Node(int key) {
         this.key = key;
         this.next = null;
-    }
 
+    }
 }
