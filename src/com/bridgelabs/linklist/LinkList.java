@@ -2,19 +2,26 @@ package com.bridgelabs.linklist;
 
 public class LinkList {
     static Node head;
+    static int length = 0;
 
     static  void addFirst(int key){
         Node newNode = new Node(key);
         if(key==30){
-            System.out.println("Inserting Node 40 after node 30");
             addFirst(40);
         }
+        if(key==40)
+        {
+            System.out.println("Node 40 removed");
+            return;
+        }
+        length++;
         if(head==null){
             head=newNode;
             return;
         }
         newNode.next=head;
         head=newNode;
+
 
     }
     static void printLinkList(){
@@ -51,6 +58,7 @@ public class LinkList {
 
         printLinkList();
         findElement();
+        System.out.println("length of linklist is " + length);
 
 
     }
