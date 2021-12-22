@@ -16,6 +16,13 @@ public class LinkList {
         }
         currNode.next=newNode;
     }
+    public static void deleteFirst(){
+        if(head==null){
+            System.out.println("List is empty");
+            return;
+        }
+        head=head.next;
+    }
     static void printLinkList(){
         if( head == null )
         {
@@ -23,11 +30,11 @@ public class LinkList {
             return;
         }
         Node currNode = head;
-        while(currNode!=null){
+        while(currNode.next!=null){
             System.out.print(currNode.key + " -> ");
             currNode=currNode.next;
         }
-        System.out.println("null");
+      System.out.println(currNode.key);
     }
 
     public static void main(String[] args) {
@@ -35,6 +42,7 @@ public class LinkList {
         linkList.appendingMethod(56);
         linkList.appendingMethod(30);
         linkList.appendingMethod(70);
+        deleteFirst();
         printLinkList();
 
     }
