@@ -55,6 +55,7 @@ public class LinkList {
         linkList.sortedInsert(70);
         linkList.sortedInsert(30);
         linkList.sortedInsert(56);
+        linkList.sortedInsert(40);
 
 
         printLinkList();
